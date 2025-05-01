@@ -4,7 +4,7 @@ import mcp_client as mc
 import asyncio
 
 # Intilize stremalit web UI
-st.markdown("<h1 style='text-align: center;'>Demo Webpage 🍃</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center;'>Demo Web 🍃</h1>", unsafe_allow_html=True)
 st.markdown("<br><br>", unsafe_allow_html=True)
 
 
@@ -20,6 +20,7 @@ if go_button:
             
         with st.spinner("Working..."):
             response = asyncio.run(mc.menu_analyze_agent(image_path))
+            st.write("Ingredients needed:")
             st.write(response)
     else:
         st.write("Upload an image!")
